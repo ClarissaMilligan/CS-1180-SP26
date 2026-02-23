@@ -17,6 +17,8 @@ public class Methods {
         String color = scnr.next();
 
         System.out.println("Hi " + name + "! You are " + age + " years old and your favorite color is " + color);
+
+        counting(3, true);
     }
 
     public static void requestInfo(String info) {
@@ -35,5 +37,17 @@ public class Methods {
             return true;
         }
         return false;
+    }
+
+    public static void counting(int maxVal, boolean skipOdds)
+    {
+        for (int i = 0; i <= maxVal; i++)
+        {
+            System.out.println(i);
+            if (skipOdds)
+            {
+                i++;
+            }
+        }
     }
 }
