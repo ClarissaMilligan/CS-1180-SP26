@@ -10,7 +10,7 @@ public class MultiDimensionalArrays
         // non-ragged array
         //String[][] classSections = new String[3][50];
         // ragged array
-        String[][] classSections = { new String[34], new String[29], new String[52]};
+        String[][] classSections = { new String[34], new String[29], new String[52] };
         System.out.println(Arrays.toString(classSections));
 
         classSections[0][3] = "Bob";
