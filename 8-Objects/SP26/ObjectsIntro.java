@@ -2,8 +2,11 @@ public class ObjectsIntro
 {
     public static void main(String[] args)
     {
+        System.out.println("PIXEL COUNT: " + Pixel.getPixelCount());
         Pixel p1 = new Pixel(33, 89, "blue");
+        System.out.println("PIXEL COUNT: " + p1.getPixelCount());
         Pixel p2 = new Pixel();
+        System.out.println("PIXEL COUNT: " + p2.getPixelCount());
 
         p1.pixelInfo();
         p2.pixelInfo();
@@ -30,5 +33,19 @@ public class ObjectsIntro
         p3.pixelInfo();
 
         p3 = new Pixel();
+        System.out.println("PIXEL COUNT: " + Pixel.getPixelCount());
+
+        // ***************************
+        // INHERITANCE PRACTICE STARTS
+        // ***************************
+
+        System.out.println("\n----------\nSTART INHERITANCE PRACTICE\n----------\n");
+
+        TouchscreenPixel tp1 = new TouchscreenPixel();
+        System.out.println(tp1.getX());
+        tp1.setX(32);
+        tp1.setColor("blue");
+        tp1.setY(179);
+        tp1.pixelInfo();
     }
 }

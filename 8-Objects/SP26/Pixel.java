@@ -2,16 +2,19 @@ import java.util.*;
 
 public class Pixel
 {
+    static int pixelCount = 0;
+
     private int x = 0;
     private int y = 0;
     private String color = "";
 
-    private int maxX = 1920;
-    private int maxY = 1080;
-    private ArrayList<String> validColors = new ArrayList<>(Arrays.asList("red", "orange", "yellow", "green", "blue", "purple", "pink", "black", "white", "gray", "brown"));
+    final private int MAX_X = 1920;
+    final private int MAX_Y = 1080;
+    final private ArrayList<String> VALID_COLORS = new ArrayList<>(Arrays.asList("red", "orange", "yellow", "green", "blue", "purple", "pink", "black", "white", "gray", "brown"));
 
     public Pixel()
     {
+        pixelCount++;
 //        x = 0;
 //        y = 0;
 //        color = "";
@@ -25,7 +28,13 @@ public class Pixel
         // TODO: make this throw custom exceptions if values out of bounds
         setX(x);
         setY(y);
-        setColor(color);
+        setColor(newPixelColor);
+        pixelCount++;
+    }
+
+    public static int getPixelCount()
+    {
+        return pixelCount;
     }
 
     public void pixelInfo()
@@ -40,7 +49,7 @@ public class Pixel
 
     public void setX(int newX)
     {
-        if (newX >= 0 && newX <= maxX)
+        if (newX >= 0 && newX <= MAX_X)
         {
             x = newX;
         }
@@ -53,7 +62,7 @@ public class Pixel
 
     public boolean setY(int newY)
     {
-        if (newY >= 0 && newY <= maxY)
+        if (newY >= 0 && newY <= MAX_Y)
         {
             y = newY;
             return true;
@@ -69,7 +78,7 @@ public class Pixel
     public void setColor(String color)
     {
         color = color.toLowerCase();
-        if (validColors.contains(color))
+        if (VALID_COLORS.contains(color))
         {
             this.color = color;
         }
@@ -78,11 +87,11 @@ public class Pixel
 
     public int getMaxX()
     {
-        return maxX;
+        return MAX_X;
     }
 
     public int getMaxY()
     {
-        return maxY;
+        return MAX_Y;
     }
 }
