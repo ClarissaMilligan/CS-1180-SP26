@@ -5,7 +5,14 @@ public class TouchscreenPixel extends Pixel
 
     public TouchscreenPixel()
     {
+        System.out.println("Touchscreen pixel no-arg constructor was called");
+    }
 
+    public TouchscreenPixel(boolean isClicked, int totalClickCount)
+    {
+        this();
+        setClicked(isClicked);
+        setTotalClickCount(totalClickCount);
     }
 
     public TouchscreenPixel(boolean isClicked, int totalClickCount, int x, int y, String color)
@@ -13,6 +20,12 @@ public class TouchscreenPixel extends Pixel
         super(x, y, color);
         setClicked(isClicked);
         setTotalClickCount(totalClickCount);
+    }
+
+    public void pixelInfo()
+    {
+        super.pixelInfo();
+        System.out.println(super.getColor() + " touchscreen pixel at x:" + getX() + " y:" + getY());
     }
 
     public boolean isClicked()

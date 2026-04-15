@@ -42,6 +42,11 @@ public class Pixel
         System.out.println(color + " pixel at x:" + x + " y:" + y);
     }
 
+    public String toString()
+    {
+        return "Pixel (" + color + ") located at (" + x + ", " + y + ")";
+    }
+
     public int getX()
     {
         return x;

@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class ObjectsIntro
 {
     public static void main(String[] args)
@@ -47,5 +50,11 @@ public class ObjectsIntro
         tp1.setColor("blue");
         tp1.setY(179);
         tp1.pixelInfo();
+
+        TouchscreenPixel tp2 = new TouchscreenPixel(true, 55);
+//        Scanner scnr = new Scanner(System.in);
+//        ArrayList<Integer> ints = new ArrayList<>();
+
+        System.out.println(tp2);
     }
 }
