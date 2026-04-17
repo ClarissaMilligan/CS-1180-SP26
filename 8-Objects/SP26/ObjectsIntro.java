@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class ObjectsIntro
 {
-    public static void main(String[] args)
+    public static void main(String[] args) throws PixelIndexOutOfBounds
     {
         System.out.println("PIXEL COUNT: " + Pixel.getPixelCount());
         Pixel p1 = new Pixel(33, 89, "blue");
@@ -32,7 +32,7 @@ public class ObjectsIntro
         p1.setColor("PURPLE");
         System.out.println(p1.getColor());
 
-        Pixel p3 = new Pixel(-45, 90000, "cyAN");
+        Pixel p3 = new Pixel(45, 90000, "cyAN");
         p3.pixelInfo();
 
         p3 = new Pixel();
@@ -56,5 +56,31 @@ public class ObjectsIntro
 //        ArrayList<Integer> ints = new ArrayList<>();
 
         System.out.println(tp2);
+
+
+        // EXCEPTION PRACTICE
+
+        Scanner scnr = new Scanner(System.in);
+        System.out.println("give x value: ");
+        int x = 0;
+
+        boolean badInput = true;
+
+        while (badInput)
+        {
+            try
+            {
+                x = scnr.nextInt();
+                Pixel userPixel = new Pixel(x, 87, "blue");
+                badInput = false;
+            }
+            catch (PixelIndexOutOfBounds e)
+            {
+                System.out.println(e.getMessage());
+                System.out.println("Try again!");
+                scnr.nextLine();
+            }
+        }
+
     }
 }

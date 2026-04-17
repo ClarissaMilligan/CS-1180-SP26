@@ -15,7 +15,7 @@ public class TouchscreenPixel extends Pixel
         setTotalClickCount(totalClickCount);
     }
 
-    public TouchscreenPixel(boolean isClicked, int totalClickCount, int x, int y, String color)
+    public TouchscreenPixel(boolean isClicked, int totalClickCount, int x, int y, String color) throws PixelIndexOutOfBounds
     {
         super(x, y, color);
         setClicked(isClicked);
