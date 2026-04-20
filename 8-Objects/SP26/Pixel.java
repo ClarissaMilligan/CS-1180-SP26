@@ -20,7 +20,7 @@ public class Pixel
 //        color = "";
     }
 
-    public Pixel(int x, int y, String newPixelColor) throws PixelIndexOutOfBounds
+    public Pixel(int x, int y, String newPixelColor)
     {
 //        this.x = x;
 //        this.y = y;
@@ -28,13 +28,22 @@ public class Pixel
         // TODO: make this throw custom exceptions if values out of bounds
         if (x < 0 || x > MAX_X)
         {
-            throw new PixelIndexOutOfBounds(x);
+            throw new PixelIndexOutOfBounds(x, MAX_X);
         }
         else
         {
             this.x = x;
         }
-        setY(y);
+
+        if (y < 0 || y > MAX_Y)
+        {
+            throw new PixelIndexOutOfBounds(y, MAX_Y);
+        }
+        else
+        {
+            this.y = y;
+        }
+
         setColor(newPixelColor);
         pixelCount++;
     }

@@ -1,9 +1,10 @@
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class ObjectsIntro
 {
-    public static void main(String[] args) throws PixelIndexOutOfBounds
+    public static void main(String[] args)
     {
         System.out.println("PIXEL COUNT: " + Pixel.getPixelCount());
         Pixel p1 = new Pixel(33, 89, "blue");
@@ -32,7 +33,7 @@ public class ObjectsIntro
         p1.setColor("PURPLE");
         System.out.println(p1.getColor());
 
-        Pixel p3 = new Pixel(45, 90000, "cyAN");
+        Pixel p3 = new Pixel(45, 900, "cyAN");
         p3.pixelInfo();
 
         p3 = new Pixel();
@@ -74,10 +75,15 @@ public class ObjectsIntro
                 Pixel userPixel = new Pixel(x, 87, "blue");
                 badInput = false;
             }
-            catch (PixelIndexOutOfBounds e)
+            catch (PixelIndexOutOfBounds pioob)
             {
-                System.out.println(e.getMessage());
+                System.out.println(pioob.getMessage());
                 System.out.println("Try again!");
+                scnr.nextLine();
+            }
+            catch (InputMismatchException ime)
+            {
+                System.out.println("Must input an integer!!!");
                 scnr.nextLine();
             }
         }
