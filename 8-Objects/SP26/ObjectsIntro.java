@@ -88,5 +88,26 @@ public class ObjectsIntro
             }
         }
 
+
+        // POLYMORPHISM PRACTICE
+
+        ArrayList<Pixel> pixels = new ArrayList<>();
+        pixels.add(p1);
+        pixels.add(p2);
+        pixels.add(p3);
+        pixels.add(tp1);
+        pixels.add(tp2);
+
+        System.out.println("\n\nPOLYMORPHISM\n----------");
+        for (Pixel p : pixels)
+        {
+            p.pixelInfo();
+
+            if (p instanceof TouchscreenPixel)
+            {
+                System.out.println(((TouchscreenPixel) p).isClicked());
+            }
+        }
+
     }
 }
